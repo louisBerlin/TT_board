@@ -18,7 +18,7 @@ public class PlayerCharacter {
 
     public static void move(String s) {
 
-        System.out.println("commit");
+        System.out.println("commit 2");
 
         switch (s) {
             case "w" -> y = y + 1;
