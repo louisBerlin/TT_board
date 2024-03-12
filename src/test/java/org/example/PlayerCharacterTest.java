@@ -1,6 +1,7 @@
 package org.example;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,17 +11,31 @@ class PlayerCharacterTest {
 
 
 
+/*
+    @BeforeAll
+    static void resetXY() {
+        PlayerCharacter.x = 0;
+        PlayerCharacter.y = 0;
+    }
+
+
+ */
 
     @Test
     void getX_shouldReturn0(){
 
+
+
         //GIVEN
         int expected = 0;
+        PlayerCharacter player1 = new PlayerCharacter();
+
+
+
         //WHEN
-        int actual = PlayerCharacter.getX();
+        int actual =   player1.getX();
         //THEN
         Assertions.assertEquals(expected,actual);
-
 
     }
 
@@ -62,12 +77,18 @@ class PlayerCharacterTest {
 
         //GIVEN
         int expected = 2;
+        PlayerCharacter player2 = new PlayerCharacter();
+
         //WHEN
 
-        PlayerCharacter.move("w");
-        PlayerCharacter.move("w");
 
-        int actual = PlayerCharacter.getY();
+        player2.move("w");
+        player2.move("w");
+
+        PlayerCharacter.sayHello();
+
+
+        int actual = player2.getY();
 
         //THEN
         Assertions.assertEquals(expected,actual);
